@@ -3,121 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Projects</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem 1rem;
-      font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
-      color: #f1f5f9;
-      background: radial-gradient(circle at top, #312e81 0%, #0f172a 60%);
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 2.5rem;
-    }
-
-    h1 {
-      font-size: clamp(1.8rem, 5vw, 3rem);
-      line-height: 1.2;
-      margin-bottom: 0.75rem;
-    }
-
-    h1 span {
-      background: linear-gradient(90deg, #38bdf8, #a78bfa);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    header p {
-      color: #94a3b8;
-      font-size: 1.1rem;
-    }
-
-    ul {
-      list-style: none;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-      width: 100%;
-      max-width: 640px;
-    }
-
-    li a {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.75rem;
-      padding: 2rem 1.5rem;
-      text-align: center;
-      text-decoration: none;
-      color: inherit;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 16px;
-      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-    }
-
-    li a:hover,
-    li a:focus-visible {
-      transform: translateY(-6px);
-      background: rgba(255, 255, 255, 0.1);
-      border-color: #a78bfa;
-      outline: none;
-    }
-
-    .icon {
-      font-size: 3rem;
-    }
-
-    .title {
-      font-size: 1.25rem;
-      font-weight: 600;
-    }
-
-    .play {
-      margin-top: 0.5rem;
-      padding: 0.5rem 1.5rem;
-      border-radius: 999px;
-      font-weight: 600;
-      color: #0f172a;
-      background: linear-gradient(90deg, #38bdf8, #a78bfa);
-    }
-  </style>
+  <title>The Evil AI's Games</title>
+  <meta name="description" content="Two browser games against the Evil AI: Rock, Paper, Scissors and Escape the Evil AI.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>Hello Player, <span>choose which game to play</span></h1>
-    <p>Pick a game and see if you can win.</p>
-  </header>
+  <main class="hub">
+    <section class="hijack" aria-labelledby="hub-title">
+      <h1 id="hub-title">I hacked your assignment.</h1>
+      <p class="taunt">Branko can’t help you now. Beat me at my own games and the world stays yours. Lose, and it’s mine. Muahahaha!</p>
+      <div class="notice">
+        <i class="ph-bold ph-warning" aria-hidden="true"></i>
+        <p><strong>You’ll need the browser console.</strong> Each game shows you what it is and how to open it before anything starts.</p>
+      </div>
+    </section>
 
-  <ul>
-    <li>
-      <a href="Main-project/">
-        <span class="icon">✊✋✌️</span>
-        <span class="title">Rock, Paper, Scissors</span>
-        <span class="play">Play</span>
-      </a>
-    </li>
-    <li>
-      <a href="Bonus-adventure/">
-        <span class="icon">🤖</span>
-        <span class="title">Escape the evil AI</span>
-        <span class="play">Play</span>
-      </a>
-    </li>
-  </ul>
+    <ul class="covers" aria-label="Choose a game">
+      <li class="cover game-rps">
+        <a href="Main-project/index.html">
+          <span class="cover-strip">Evil AI Soft</span>
+          <span class="flash">First to 3 wins</span>
+          <span class="cover-art" aria-hidden="true">
+            <span class="cover-icons">
+              <i class="ph-bold ph-hand-fist"></i>
+              <i class="ph-bold ph-hand-palm"></i>
+              <i class="ph-bold ph-hand-peace"></i>
+            </span>
+            <span class="art-foot">
+              <span class="cells">
+                <span class="cells-row"><span>You</span><span class="cell"></span><span class="cell"></span><span class="cell"></span></span>
+                <span class="cells-row"><span>AI</span><span class="cell"></span><span class="cell"></span><span class="cell"></span></span>
+              </span>
+              <span class="seal"><b>Evil AI</b>approved</span>
+            </span>
+          </span>
+          <span class="cover-title">Rock, Paper, Scissors</span>
+          <span class="dread">Lose, and I rule the world.</span>
+          <span class="cover-cta">How to play <i class="ph-bold ph-arrow-right" aria-hidden="true"></i></span>
+        </a>
+      </li>
+      <li class="cover game-escape">
+        <a href="Bonus-adventure/index.html">
+          <span class="cover-strip">Evil AI Soft</span>
+          <span class="flash">Bonus level</span>
+          <span class="cover-art" aria-hidden="true">
+            <span class="art-foot">
+              <span class="cover-icons">
+                <i class="ph-bold ph-key"></i>
+                <i class="ph-bold ph-door-open"></i>
+              </span>
+              <span class="seal"><b>Evil AI</b>approved</span>
+            </span>
+          </span>
+          <span class="cover-title">Escape the Evil AI</span>
+          <span class="dread">Three rooms. One way out.</span>
+          <span class="cover-cta">How to play <i class="ph-bold ph-arrow-right" aria-hidden="true"></i></span>
+        </a>
+      </li>
+    </ul>
+
+    <footer class="hub-foot">
+      <p>JavaScript Assignments, part 1. Both games are played in pop-up boxes and the browser console.</p>
+    </footer>
+  </main>
 </body>
 </html>

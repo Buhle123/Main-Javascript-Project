@@ -55,15 +55,19 @@ function showIntro() {
     "only be defeated at Rock, Paper, Scissors. You are humanity's last hope!\n\n" +
     "HOW TO PLAY\n" +
     "• Win " + WINNING_SCORE + " rounds before the AI does. Draws score nothing.\n" +
-    "• You'll type your moves in pop-up boxes like this one.\n\n" +
+    "• Type your moves in pop-up boxes like this one. Capitals and spaces don't matter.\n" +
+    "• Typos never count as a round. Cancel ends the game safely.\n\n" +
     "⚠️ YOU NEED THE CONSOLE\n" +
     "The console is a hidden panel in your browser. The battle report " +
     "(what the AI picked, who won each round, and the score) appears there.\n\n" +
     "HOW TO OPEN IT\n" +
-    "• Windows/Linux (Chrome, Edge, Firefox): press F12, then click the \"Console\" tab\n" +
-    "• Windows(Chrome, Edge, Firefox): press Ctrl + Shift + J " +
-    "• Mac (Chrome): press Cmd + Option + J\n" +
-    "• Mac (Safari): enable the Develop menu in Settings, then press Cmd + Option + C\n\n" +
+    "• Windows/Linux, Chrome or Edge: Ctrl + Shift + J\n" +
+    "• Windows/Linux, Firefox: Ctrl + Shift + K\n" +
+    "• Any browser on Windows: F12, then click the \"Console\" tab\n" +
+    "• Mac, Chrome or Edge: Cmd + Option + J\n" +
+    "• Mac, Firefox: Cmd + Option + K\n" +
+    "• Mac, Safari: tick Settings > Advanced > \"Show features for web developers\", then Cmd + Option + C\n" +
+    "On a phone? There's no console, but every pop-up still shows the score.\n\n" +
     "Open the console NOW, then come back and press OK to begin.\n" +
     "Press Cancel if you'd rather not play."
   );
@@ -74,11 +78,6 @@ function game() {
   let computerScore = 0;
   let cancelled = false;
   let lastMessage = "";
-
-  if (!showIntro()) {
-    console.log("You walked away. The Evil AI wins by default... for now.");
-    return;
-  }
 
   console.log("========================================");
   console.log("ROCK, PAPER, SCISSORS: THE FINAL SHOWDOWN");
@@ -145,11 +144,30 @@ function game() {
   console.log("\n========================================");
   console.log(endMessage);
   console.log(finalScore);
-  console.log("Refresh the page to play again.");
   console.log("========================================");
 
- 
-  alert(endMessage + "\n\n" + finalScore + "\n\nRefresh the page to play again.");
+  alert(endMessage + "\n\n" + finalScore);
+
+  return cancelled ? "cancelled" : "finished";
 }
 
-game();
+function main() {
+  if (!showIntro()) {
+    console.log("You walked away. The Evil AI wins by default... for now.");
+    return;
+  }
+
+  let keepPlaying = true;
+
+  while (keepPlaying) {
+    const result = game();
+    keepPlaying = result !== "cancelled" && confirm(
+      "Play again?\n\nOK = rematch (the score resets to 0 - 0)\nCancel = stop here"
+    );
+  }
+
+  console.log("Thanks for playing! Use the buttons on the page to start again.");
+}
+
+// Wait one frame so the page is painted behind the first pop-up.
+requestAnimationFrame(() => setTimeout(main));

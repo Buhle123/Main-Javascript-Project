@@ -238,9 +238,12 @@ function main() {
     "THE CONSOLE\n" +
     "The console is a hidden browser panel where the full story log appears. " +
     "The pop-ups also show the key information, but the console gives the full story.\n" +
-    "• Windows/Linux: press F12, then click the \"Console\" tab\n" +
-    "• Mac (Chrome): Cmd + Option + J\n" +
-    "• Mac (Safari): enable the Develop menu in Settings, then Cmd + Option + C\n\n" +
+    "• Windows/Linux, Chrome or Edge: Ctrl + Shift + J\n" +
+    "• Windows/Linux, Firefox: Ctrl + Shift + K\n" +
+    "• Any browser on Windows: F12, then click the \"Console\" tab\n" +
+    "• Mac, Chrome or Edge: Cmd + Option + J\n" +
+    "• Mac, Firefox: Cmd + Option + K\n" +
+    "• Mac, Safari: tick Settings > Advanced > \"Show features for web developers\", then Cmd + Option + C\n\n" +
     "OK = start the game\nCancel = leave"
   );
 
@@ -278,4 +281,5 @@ function main() {
   alert("Thanks for playing!");
 }
 
-main();
+// Wait one frame so the page is painted behind the first pop-up.
+requestAnimationFrame(() => setTimeout(main));

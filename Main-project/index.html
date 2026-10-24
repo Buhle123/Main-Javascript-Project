@@ -1,13 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS-ASSIGNMENT</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock, Paper, Scissors vs. the Evil AI</title>
+  <meta name="description" content="How to play Rock, Paper, Scissors against the Evil AI, and how to open the browser console first.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css">
+  <link rel="stylesheet" href="../styles.css">
 </head>
-<body>
+<body class="game-rps">
+  <header class="bar">
+    <a class="back" href="../index.html"><i class="ph-bold ph-arrow-left" aria-hidden="true"></i> All games</a>
+    <span class="bar-title">Game manual</span>
+  </header>
 
-    <script src="script.js" defer></script>
-    
+  <main>
+    <section class="band" aria-labelledby="game-title">
+      <div class="band-inner">
+        <div>
+          <h1 id="game-title">Rock, Paper, Scissors</h1>
+          <p class="lede">The Evil AI’s first challenge. Win three rounds before it does and the world is saved.</p>
+          <div class="key-slot">
+            <a class="key-start" href="play.html">Start the game <i class="ph-bold ph-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="band-art" aria-hidden="true">
+          <i class="ph-bold ph-hand-fist"></i>
+          <i class="ph-bold ph-hand-palm"></i>
+          <i class="ph-bold ph-hand-peace"></i>
+        </div>
+      </div>
+    </section>
+
+    <nav class="contents" aria-label="Contents"><div class="contents-inner"><strong>Contents</strong><ol><li><a href="#story">The story <span>1</span></a></li><li><a href="#warning">Read before playing <span>2</span></a></li><li><a href="#controls">Open the console <span>3</span></a></li><li><a href="#how">How to play <span>4</span></a></li><li><a href="#where">Where things appear <span>5</span></a></li></ol></div></nav>
+
+    <div class="spread">
+      <div class="page-col">
+        <section class="page" aria-labelledby="story">
+          <h2 id="story">The story</h2>
+          <p>An AI went rogue, hacked your JavaScript assignment and decided to take over the world. Its only weakness: it settles everything with Rock, Paper, Scissors. Your teacher can’t help. It’s up to you.</p>
+          <blockquote class="villain">
+            <p>“You will never stop me unless you win three rounds. And typing nonsense won’t save you. Muahahaha!”</p>
+            <cite>The Evil AI</cite>
+          </blockquote>
+            <span class="folio" aria-hidden="true">1</span>
+        </section>
+
+        <section class="warning" aria-labelledby="warning">
+          <h2 id="warning"><i class="ph-bold ph-warning" aria-hidden="true"></i> Read before playing</h2>
+          <dl class="facts">
+            <div>
+              <dt>You need the browser console.</dt>
+              <dd>It’s a hidden panel built into every desktop browser. Nothing to install.</dd>
+            </div>
+            <div>
+              <dt>Why?</dt>
+              <dd>The battle report lives there: what the AI picked, who won each round and the running score.</dd>
+            </div>
+            <div>
+              <dt>Where does everything appear?</dt>
+              <dd>You type your moves in pop-up boxes. The report appears in the console, next to this page.</dd>
+            </div>
+          </dl>
+            <span class="folio" aria-hidden="true">2</span>
+        </section>
+
+        <section class="page" aria-labelledby="controls">
+          <h2 id="controls">Open the console</h2>
+          <p>Press these keys together while this page is open. The console opens at the side or bottom of the window.</p>
+          <table class="keys-table">
+            <thead>
+              <tr><th scope="col">Browser</th><th scope="col">Windows / Linux</th><th scope="col">Mac</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Chrome, Edge</th>
+                <td data-label="Windows / Linux"><span class="combo demo"><kbd style="--i:0">Ctrl</kbd><span class="plus">+</span><kbd style="--i:1">Shift</kbd><span class="plus">+</span><kbd style="--i:2">J</kbd></span></td>
+                <td data-label="Mac"><span class="combo"><kbd>Cmd</kbd><span class="plus">+</span><kbd>Option</kbd><span class="plus">+</span><kbd>J</kbd></span></td>
+              </tr>
+              <tr>
+                <th scope="row">Firefox</th>
+                <td data-label="Windows / Linux"><span class="combo"><kbd>Ctrl</kbd><span class="plus">+</span><kbd>Shift</kbd><span class="plus">+</span><kbd>K</kbd></span></td>
+                <td data-label="Mac"><span class="combo"><kbd>Cmd</kbd><span class="plus">+</span><kbd>Option</kbd><span class="plus">+</span><kbd>K</kbd></span></td>
+              </tr>
+              <tr>
+                <th scope="row">Safari</th>
+                <td data-label="Windows / Linux"><span class="none">Not available</span></td>
+                <td data-label="Mac"><span class="combo"><kbd>Cmd</kbd><span class="plus">+</span><kbd>Option</kbd><span class="plus">+</span><kbd>C</kbd></span></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="fine">
+            <ul>
+              <li><strong>Any browser on Windows:</strong> <kbd>F12</kbd>, then click the <strong>Console</strong> tab. On some laptops you hold <kbd>Fn</kbd> as well.</li>
+              <li><strong>Safari, first time only:</strong> open Safari Settings, go to Advanced and tick “Show features for web developers”.</li>
+              <li><strong>On a phone or tablet?</strong> There’s no console, but you can still play: every pop-up shows the score and the last round.</li>
+            </ul>
+          </div>
+            <span class="folio" aria-hidden="true">3</span>
+        </section>
+      </div>
+
+      <div class="page-col">
+        <section class="page" aria-labelledby="how">
+          <h2 id="how">How to play</h2>
+          <ol class="steps">
+            <li><span>Open the console with the keys on this page and keep it open.</span></li>
+            <li><span>Press <strong>Start the game</strong>. A pop-up box asks for your move.</span></li>
+            <li><span>Type <code>rock</code>, <code>paper</code> or <code>scissors</code> and press OK. Capitals and extra spaces don’t matter.</span></li>
+            <li><span>First to <strong>3 round wins</strong> takes it. A draw gives nobody a point, and a typo never counts as a round.</span></li>
+            <li><span>Want out? Press <strong>Cancel</strong> in any pop-up and the game ends safely.</span></li>
+          </ol>
+            <span class="folio" aria-hidden="true">4</span>
+        </section>
+
+        <section class="page" aria-labelledby="where">
+          <h2 id="where">Where things appear</h2>
+          <div class="surfaces">
+            <div class="surface-row">
+              <i class="ph-bold ph-cursor-text" aria-hidden="true"></i>
+              <p><strong>Pop-up boxes</strong>Type your move, see the score, read the final result.</p>
+            </div>
+            <div class="surface-row">
+              <i class="ph-bold ph-terminal-window" aria-hidden="true"></i>
+              <p><strong>The console</strong>The full battle report, round by round.</p>
+            </div>
+          </div>
+          <figure class="console">
+            <figcaption>Example: the console after round 1</figcaption>
+<pre><code><span class="dim">--- Round 1 ---</span>
+You chose: Rock
+The AI chose: Scissors
+You win this round! 💪
+Score: You 1 | AI 0</code></pre>
+          </figure>
+            <span class="folio" aria-hidden="true">5</span>
+        </section>
+      </div>
+    </div>
+
+    <section class="ready" aria-labelledby="ready">
+      <div class="ready-inner">
+        <div>
+          <h2 id="ready">Console open? Then play.</h2>
+          <p>The first pop-up opens as soon as you press Start.</p>
+        </div>
+        <div class="key-slot">
+          <a class="key-start" href="play.html">Start the game <i class="ph-bold ph-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
