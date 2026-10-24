@@ -1,14 +1,123 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Projects</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+      color: #f1f5f9;
+      background: radial-gradient(circle at top, #312e81 0%, #0f172a 60%);
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+
+    h1 span {
+      background: linear-gradient(90deg, #38bdf8, #a78bfa);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    header p {
+      color: #94a3b8;
+      font-size: 1.1rem;
+    }
+
+    ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 640px;
+    }
+
+    li a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      text-decoration: none;
+      color: inherit;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 16px;
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    li a:hover,
+    li a:focus-visible {
+      transform: translateY(-6px);
+      background: rgba(255, 255, 255, 0.1);
+      border-color: #a78bfa;
+      outline: none;
+    }
+
+    .icon {
+      font-size: 3rem;
+    }
+
+    .title {
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .play {
+      margin-top: 0.5rem;
+      padding: 0.5rem 1.5rem;
+      border-radius: 999px;
+      font-weight: 600;
+      color: #0f172a;
+      background: linear-gradient(90deg, #38bdf8, #a78bfa);
+    }
+  </style>
 </head>
 <body>
-  <h1>My Projects</h1>
+  <header>
+    <h1>Hello Player, <span>choose which game to play</span></h1>
+    <p>Pick a game and see if you can win.</p>
+  </header>
+
   <ul>
-    <li><a href="Main-project/">Main project</a></li>
-    <li><a href="Bonus-adventure/">Bonus adventure</a></li>
+    <li>
+      <a href="Main-project/">
+        <span class="icon">✊✋✌️</span>
+        <span class="title">Rock, Paper, Scissors</span>
+        <span class="play">Play</span>
+      </a>
+    </li>
+    <li>
+      <a href="Bonus-adventure/">
+        <span class="icon">🤖</span>
+        <span class="title">Escape the evil AI</span>
+        <span class="play">Play</span>
+      </a>
+    </li>
   </ul>
 </body>
 </html>
